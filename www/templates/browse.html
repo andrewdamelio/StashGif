@@ -1,0 +1,27 @@
+<ion-view view-title="Browse">
+  <ion-nav-buttons side="right">
+      <button class="button button-clear button-positive"
+              ng-click="clear()"
+              ng-if="searchData.giphy || searchData.giphy.length > 0">
+          Clear
+      </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div ng-if="!searchData.giphy || searchData.giphy.length === 0">
+      <center>
+        <div>
+          <i style="font-size: 400px" class="ion-ionic"></i>
+        </div>
+      </center>
+    </div>
+
+  </div>
+    <div ng-repeat="gif in searchData.giphy track by $index">
+      <div id="bg" ng-class="{'heart-active': gif.active}">
+        <img ng-click="favourite(gif)"
+             ng-src="{{gif.images.fixed_height.url}}" />
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+

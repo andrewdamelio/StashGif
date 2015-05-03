@@ -1,0 +1,30 @@
+<ion-view view-title="{{selectedGif.id}}">
+    <ion-nav-buttons side="left">
+      <button class="button button-clear button-positive" ng-click="goBack()">
+          Back
+      </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+      <button class="button button-clear button-positive" ng-click="remove(selectedGif)">
+          Remove
+      </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="spinner-container" ng-show="waiting">
+      <ion-spinner icon="lines"></ion-spinner>
+    </div>
+    <div ng-hide="!selectedGif || waiting" id="bg">
+      <img ng-src="{{selectedGif.images.fixed_height.url}}" />
+    </div>
+    <div ng-hide="! selectedGif || waiting" class="button-center">
+      <button ng-class="{'button-balanced': copiedID}"
+              class="button button-selectedGif"
+              ng-click="copyId(selectedGif)">Copy GiphyID</button>
+
+      <button ng-class="{'button-balanced': copiedURL}"
+              class="button button-positive"
+              ng-click="copyUrl(selectedGif)">Copy URL</button>
+    </div>
+
+  </ion-content>
+</ion-view>

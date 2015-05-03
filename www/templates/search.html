@@ -1,0 +1,22 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Search</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeSearch()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doSearch()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Keyword</span>
+          <input type="text" ng-model="searchData.keyword">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Search</button>
+        </label>
+
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

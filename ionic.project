@@ -1,0 +1,8 @@
+{
+  "name": "StashGif",
+  "app_id": "312105e3",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ]
+}
